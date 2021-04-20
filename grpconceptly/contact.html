@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Groupe Conceptly :: Contact</title>
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;700;800;900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&display=swap">
+  <style>
+
+    .wrapper {
+      width: 1180px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .title {
+      font-family: 'Playfair Display', serif;
+      margin-top: 100px;
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    .flex-p,
+    .flex-c {
+      display: flex;
+    }
+
+    .flex-c {
+      flex: 2;
+    }
+
+    .i1-2 {
+      flex: 1;
+    }
+
+    /* #header */
+    .header::before,
+    .header:after,
+    .footer::after {
+      content: '';
+      display: block;
+      height: 4px;
+      background-color: rgb(9, 76, 102);
+    }
+
+    .header:after,
+    .footer::after {
+      margin-top: 1px;
+    }
+
+    header {
+      background: linear-gradient(90deg, rgb(9, 76, 102) 0%, rgb(9, 46, 102) 100%);
+      padding-top: 35px;
+      padding-bottom: 50px;
+      margin-top: 1px;
+      text-align: center;
+    }
+
+    .logo {
+      display: block;
+      width: 70px;
+      height: 73px;
+      margin: 0 auto;
+      background-image: url(logo.png);
+    }
+
+    nav {
+      margin-top: 40px;
+    }
+
+    nav a {
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 12px;
+    }
+
+    nav > a,
+    nav > span.lang {
+      margin-left: 40px;
+    }
+
+    nav > a:first-child {
+      margin-left: 0;
+    }
+
+    .lang {
+      background: url(icons/chevron-down.png) no-repeat center right;
+      padding-right: 12px;
+    }
+
+    #sec {
+      display: none;
+      font-weight: 700;
+    }
+
+    .active {
+      font-weight: 900;
+      padding-bottom: 3px;
+      border-bottom: solid 3px;
+    }
+    /* /#header */
+
+    /* #coordinates */
+    .coords {
+      background-color: rgb(246, 246, 246);
+      padding-top: 80px;
+      padding-bottom: 80px;
+      margin-top: 50px;
+      font-weight: 300;
+      font-size: 13px;
+    }
+
+    .parent {
+      display: inline-block;
+      box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+      width: 40px;
+      height: 40px;
+      border-radius: 3px;
+      background-color: rgb(255, 255, 255);
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    .addr {
+      background-image: url(icons/pin.png);
+    }
+
+    .phone {
+      background-image: url(icons/call.png);
+    }
+
+    .mail {
+      background-image: url(icons/mail.png);
+    }
+
+    address {
+      display: inline-block;
+      vertical-align: top;
+      margin-left: 20px;
+    }
+
+    address > p{margin-top: 11px;}
+
+    .phone-div {
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    .phone-div span,
+    .mail-div a {
+      margin-left: 20px;
+      vertical-align: top;
+      line-height: 40px;
+    }
+
+    .mail-div a {
+      text-decoration: none;
+      color: rgb(0, 0, 0);
+    }
+    /* /#coordinates */
+
+    /* #form */
+    form {
+      margin-top: 80px;
+    }
+
+    .phone-inpt,
+    .email-inpt {
+      margin-left: 20px;
+    }
+
+    form>div input {
+      height: 80px;
+      flex: 1;
+    }
+
+    textarea {
+      display: block;
+      padding-top: 30px;
+      width: 100%;
+      height: 265px;
+      margin-top: 30px;
+    }
+
+    input,
+    textarea,
+    button {
+      border-radius: 3px;
+      font-family: inherit;
+    }
+
+    form>div input,
+    textarea {
+      padding-left: 20px;
+      border: 1px solid rgba(0, 0, 0, 0.86);
+      box-sizing: border-box;
+      box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+      font-size: 13px;
+      font-weight: 300;
+    }
+
+    .submit {
+      border: 0;
+      background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.86) 100%);
+      box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+      color: rgb(255, 255, 255);
+      cursor: pointer;
+      margin-top: 30px;
+      height: 100px;
+      width: 100%;
+    }
+
+    .submit span {
+      background-image: url('icons/send.png');
+      background-repeat: no-repeat;
+      background-position: center right;
+      padding-right: 33px;
+      font-weight: 600;
+      font-size: 22px;
+      letter-spacing: 0.05em;
+    }
+    /* /#form */
+
+    /* #footer */
+    .flex {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    footer {
+      margin-top: 100px;
+      background: linear-gradient(90deg, rgb(9, 76, 102) 0%, rgb(9, 46, 102) 100%);
+      color: rgb(255, 255, 255);
+      padding-top: 40px;
+      padding-bottom: 40px;
+      font-weight: 900;
+      font-size: 11px;
+    }
+
+    footer a {
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+    }
+    /* /#footer */
+
+    @media (max-width: 1279px) {
+      .wrapper {
+        width: auto;
+        margin-right: 40px;
+        margin-left: 40px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .flex-p {
+        flex-direction: column;
+      }
+
+      .flex-c,
+      .i2 {
+        flex: none;
+      }
+
+      .flex-c {
+        margin-bottom: 30px;
+      }
+
+      .email-inpt {
+        margin-left: 0;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .logo {
+        width: 40px;
+        height: 42px;
+        background-image: url(logo-m.png);
+        margin: 0;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .menu {
+        display: block;
+        width: 40px;
+        height: 17px;
+        background-image: url(icons/menu.png);
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .on-mob {
+        position: absolute;
+        top: 5px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        padding: 40px 0;
+      }
+
+      .on-mob > .logo {display: none;}
+
+      .on-mob > nav,
+      .on-mob > nav > a,
+      .on-mob > nav > span
+       {display: block;}
+
+       .on-mob #curr::after {
+         content: '•';
+         margin-left: 10px;
+       }
+
+      .on-mob #sec {
+        display: inline;
+        margin-left: 10px;
+      }
+
+      .on-mob > nav > a,
+      .on-mob > nav > span {
+        margin-left: 0;
+        border-bottom: 2px solid rgba(9, 76, 102, 0.4);
+        padding: 30px 0;
+      }
+
+      .on-mob > nav > a.active {
+        background-color: rgb(255,255,255);
+        color:rgb(9, 76, 102);
+        border-bottom: 0;
+      }
+
+      .on-mob > nav > a:first-child {
+        border-top: 2px solid rgba(9, 76, 102, 0.4);
+      }
+
+      .on-mob > .menu {
+        width: 14px;
+        height: 14px;
+        margin: 0 auto;
+        background-image: url(icons/close-2.png);
+      }
+
+      .on-mob > nav > .lang {
+        background-image: none;
+      }
+
+      .wrapper {
+        margin-right: 20px;
+        margin-left: 20px;
+      }
+
+      .flex-c {
+        flex-direction: column;
+      }
+
+      .i1-1,
+      .i1-2 {
+        flex: none;
+      }
+
+      .i1-1 {
+        margin-bottom: 30px;
+      }
+
+      .phone-div {
+        text-align: left;
+      }
+
+      .phone-inpt {
+        margin-left: 0;
+      }
+
+      .flex {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .copy {
+        margin-bottom: 15px;
+      }
+    }
+    @media (max-width: 425px) {
+      footer,form,.coords,.title {margin-top: 50px;}
+    }
+  </style>
+  <script>
+    let onMob = false;
+    function handleClick(e) {
+      e.preventDefault();
+      const header = document.getElementById('header');
+      if (!onMob) {
+        header.className = 'on-mob';
+        document.body.style.overflow = 'hidden';
+      }
+      else {
+        header.removeAttribute('class');
+        document.body.style.overflow = 'auto';
+      }
+      onMob = !onMob;
+    }
+  </script>
+</head>
+
+<body>
+
+  <!-- #header -->
+  <div class="header">
+    <header id="header">
+      <a href="/" class="logo" title="GROUPE CONCEPTLY"></a>
+      <a href="#" class="menu" onclick="handleClick(event)"></a>
+      <nav>
+        <a href="/">HOME</a>
+        <a href="work.html">WORK</a>
+        <a href="services.html">SERVICES</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html" class="active">CONTACT</a>
+        <span class="lang">
+          <a id="curr">EN</a>
+          <a href="#" id="sec">FR</a>
+        </span>
+      </nav>
+    </header>
+  </div>
+  <!-- /#header -->
+
+  <main>
+
+    <h1 class="wrapper title">GET IN TOUCH</h1>
+
+    <!-- #coordinates -->
+    <div class="coords">
+      <div class="wrapper coords-child flex-p">
+
+        <div class="flex-c">
+
+          <div class="addr-div item i1-1">
+            <i class="parent addr"></i>
+            <address>
+              Bd Zerktouni, Imm. 11 Appt 6
+              <p>Guéliz, Marrakech</p>
+              <p>Maroc</p>
+            </address>
+          </div>
+
+          <div class="phone-div i1-2">
+            <i class="parent phone"></i>
+            <span>+212 6 67 94 07 79</span>
+          </div>
+
+        </div>
+
+        <div class="mail-div i2">
+          <i class="parent mail"></i>
+          <a href="mailto:contact@grpconceptly.com">contact@grpconceptly.com</a>
+        </div>
+
+      </div>
+    </div>
+    <!-- /#coordinates -->
+
+    <!-- #form -->
+    <div class="wrapper">
+      <form action="#" method="post">
+        <div class="flex-p">
+          <div class="flex-c frm_flex-c">
+            <input type="text" name="full_name" placeholder="Full name" class="full-inpt item i1-1">
+            <input type="text" name="phone" placeholder="Phone" class="phone-inpt item i1-2">
+          </div>
+          <input type="email" name="email" placeholder="Email" class="email-inpt item i2">
+        </div>
+        <textarea name="message" placeholder="Message"></textarea>
+        <button type="submit" name="submit" class="submit">
+          <span>SEND</span>
+        </button>
+      </form>
+    </div>
+    <!-- /#form -->
+
+  </main>
+
+  <!-- #footer -->
+  <div class="footer">
+    <footer>
+      <div class="wrapper flex">
+        <span class="copy">© 2020 GROUPE CONCEPTLY.</span>
+        <span>WEBSITE CREATION — <a href="mailto:contact@anaskhasmani.com" title="contact@anaskhasmani.com">ANAS KHASMANI</a></span>
+      </div>
+    </footer>
+  </div>
+  <!-- /#footer -->
+  <div class="mobile"></div>
+</body>
+
+</html>

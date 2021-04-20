@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Groupe Conceptly :: Services</title>
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700;800;900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&display=swap">
+  <style>
+
+    body {
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .header::before,
+    .header:after,
+    .footer::after {
+      content: '';
+      display: block;
+      height: 4px;
+      background-color: rgb(9, 76, 102);
+    }
+
+    .header:after,
+    .footer::after {
+      margin-top: 1px;
+    }
+
+    .flex {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    header {
+      background: linear-gradient(90deg, rgb(9, 76, 102) 0%, rgb(9, 46, 102) 100%);
+      padding-top: 35px;
+      padding-bottom: 50px;
+      margin-top: 1px;
+      text-align: center;
+    }
+
+    footer {
+      margin-top: 100px;
+      background: linear-gradient(90deg, rgb(9, 76, 102) 0%, rgb(9, 46, 102) 100%);
+      color: rgb(255, 255, 255);
+      padding-top: 40px;
+      padding-bottom: 40px;
+      font-weight: 900;
+      font-size: 11px;
+    }
+
+    footer a {
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+    }
+
+    .logo {
+      display: block;
+      width: 70px;
+      height: 73px;
+      margin: 0 auto;
+      background-image: url(logo.png);
+    }
+
+    nav {
+      margin-top: 40px;
+    }
+
+    nav a {
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 12px;
+    }
+
+    nav > a,
+    nav > span.lang {
+      margin-left: 40px;
+    }
+
+    nav >a:first-child {
+      margin-left: 0;
+    }
+
+    .lang {
+      background-image: url(icons/chevron-down.png);
+      background-repeat: no-repeat;
+      background-position: center right;
+      padding-right: 12px;
+    }
+    #sec {
+      display: none;
+      font-weight: 700;
+    }
+    .active {
+      font-weight: 900;
+      padding-bottom: 3px;
+      border-bottom: solid 3px;
+    }
+
+    .wrapper {
+      width: 1180px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .title {
+      font-family: 'Playfair Display', serif;
+      margin-top: 100px;
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    .services img {width: 100%;}
+
+    .services, .srvcs_flex {display: flex;}
+
+    .srvcs_flex {margin-top: 20px;}
+
+    .services > li {flex: 1}
+
+    .srvcs_i1 {margin-right: 20px;}
+
+    .srvcs_flex > div {flex:1}
+
+    .srvcs_flex > div:first-child {margin-right: 20px;}
+
+    .services,
+    .archi,
+    .anim,
+    .vt {
+      margin-top: 40px;
+    }
+
+    .services h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 24px;
+    }
+
+    .services h3 {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 150%;
+      margin-top: 7px;
+    }
+
+    .in-d>div,
+    .ex-d>div,
+    .archi>div,
+    .anim>div,
+    .vt>div {
+      margin-top: 7px;
+    }
+
+    .anim>div,
+    .vt>div {
+      position: relative;
+    }
+
+    .anim video,.vt video{position: absolute;top: 0;left: 0;width: 100%;height: 100%;border-radius: 3px;display: none;}
+
+    .anim .vid-wrapper > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .vid-wrapper {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 3px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgba(196, 196, 196, 0) 100%);
+      backdrop-filter: blur(16px);
+    }
+    .vid-wrapper span {
+      color: rgb(255,255,255);
+      font-size: 12px;
+      margin-top: 12px;
+      font-weight: 700;
+    }
+
+    .vid-wrapper i {
+      cursor: pointer;
+      display: inline-block;
+      width: 46px;
+      height: 31px;
+      border: rgb(255, 255, 255) solid 2px;
+      border-radius: 3px;
+      background-image: url(icons/polygon.png);
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    @media (max-width: 1279px) {
+      .wrapper {
+        width: auto;
+        margin-right: 40px;
+        margin-left: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .services {flex-direction: column;}
+      .srvcs_i1{margin-bottom: 40px;margin-right: 0;}
+    }
+
+    @media (max-width: 650px) {
+      .logo {
+        width: 40px;
+        height: 42px;
+        background-image: url(logo-m.png);
+        margin: 0;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .menu {
+        display: block;
+        width: 40px;
+        height: 17px;
+        background-image: url(icons/menu.png);
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+      }
+      .on-mob {
+        position: absolute;
+        top: 5px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        padding: 40px 0;
+      }
+
+      .on-mob > .logo {display: none;}
+
+      .on-mob > nav,
+      .on-mob > nav > a,
+      .on-mob > nav > span
+       {display: block;}
+
+       .on-mob #curr::after {
+         content: '•';
+         margin-left: 10px;
+       }
+
+      .on-mob #sec {
+        display: inline;
+        margin-left: 10px;
+      }
+
+      .on-mob > nav > a,
+      .on-mob > nav > span {
+        margin-left: 0;
+        border-bottom: 2px solid rgba(9, 76, 102, 0.4);
+        padding: 30px 0;
+      }
+
+      .on-mob > nav > a.active {
+        background-color: rgb(255,255,255);
+        color:rgb(9, 76, 102);
+        border-bottom: 0;
+      }
+
+      .on-mob > nav > a:first-child {
+        border-top: 2px solid rgba(9, 76, 102, 0.4);
+      }
+
+      .on-mob > .menu {
+        width: 14px;
+        height: 14px;
+        margin: 0 auto;
+        background-image: url(icons/close-2.png);
+      }
+
+      .on-mob > nav > .lang {
+        background-image: none;
+      }
+
+      .wrapper {
+        margin-right: 20px;
+        margin-left: 20px;
+      }
+
+      .flex{flex-direction: column;text-align: center;}
+      .copy {margin-bottom: 15px;}
+      footer,.title{margin-top: 50px;}
+    }
+
+  </style>
+  <script>
+    let onMob = false;
+    function handleClick(e) {
+      e.preventDefault();
+      const header = document.getElementById('header');
+      if (!onMob) {
+        header.className = 'on-mob';
+        document.body.style.overflow = 'hidden';
+      }
+      else {
+        header.removeAttribute('class');
+        document.body.style.overflow = 'auto';
+      }
+      onMob = !onMob;
+    }
+    function handleVid(e) {
+      const id = e.target.getAttribute('data-vid');
+      const vid = document.getElementById(id);
+      vid.style.display = 'block';
+      vid.play();
+    }
+  </script>
+</head>
+
+<body>
+
+  <!-- #header -->
+  <div class="header">
+    <header id="header">
+      <a href="/" class="logo" title="GROUPE CONCEPTLY"></a>
+      <a href="#" class="menu" onclick="handleClick(event)"></a>
+      <nav>
+        <a href="/">HOME</a>
+        <a href="work.html">WORK</a>
+        <a href="services.html" class="active">SERVICES</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
+        <span class="lang">
+          <a id="curr">EN</a>
+          <a href="#" id="sec">FR</a>
+        </span>
+      </nav>
+    </header>
+  </div>
+  <!-- /#header -->
+
+  <main>
+
+    <h1 class="wrapper title">what we do</h1>
+
+    <!-- #services -->
+    <ul class="wrapper services">
+
+      <!-- #col I -->
+      <li class="srvcs_i1">
+
+        <!-- #interior-design -->
+        <div class="in-d">
+          <h2>INTERIOR DESIGN</h2>
+          <h3>
+            Your space as gorgeous and photo realistic as it can be.
+          </h3>
+          <div>
+            <img src="projects/the-barbecue-house/the-barbecue-house-01.jpg" alt="THE BARBECUE HOUSE 01">
+            <div class="srvcs_flex">
+              <div>
+                <img src="projects/the-barbecue-house/the-barbecue-house-02.jpg" alt="THE BARBECUE HOUSE 02">
+              </div>
+              <div>
+                <img src="projects/the-barbecue-house/the-barbecue-house-03.jpg" alt="THE BARBECUE HOUSE 03">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /#interior-design -->
+
+        <!-- #architecture -->
+        <div class="archi">
+          <h2>ARCHITECTURE</h2>
+          <h3>Planning and designing buildings.</h3>
+          <div>
+            <img src="projects/urban-design/urban-design-01.jpg" alt="URBAN DESIGN 01">
+            <div class="srvcs_flex">
+              <div>
+                <img src="projects/urban-design/urban-design-02.jpg" alt="URBAN DESIGN 02">
+              </div>
+              <div>
+                <img src="projects/urban-design/urban-design-03.jpg" alt="URBAN DESIGN 03">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /#architecture -->
+
+      </li>
+      <!-- /#col I -->
+
+      <!-- #col II -->
+      <li>
+
+        <!-- #exterior-design -->
+        <div class="ex-d">
+          <h2>EXTERIOR DESIGN</h2>
+          <h3>
+            Every angle is counted for! And — Beauty has everything to do with look.
+          </h3>
+          <div>
+            <img src="projects/house-in-the-woods/house-in-the-woods-01.jpg" alt="HOUSE IN THE WOODS 01">
+            <div class="srvcs_flex">
+              <div>
+                <img src="projects/house-in-the-woods/house-in-the-woods-02.jpg" alt="HOUSE IN THE WOODS 02">
+              </div>
+              <div>
+                <img src="projects/house-in-the-woods/house-in-the-woods-03.jpg" alt="HOUSE IN THE WOODS 03">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /#exterior-design -->
+
+        <!-- #animation -->
+        <div class="anim">
+          <h2>WALK THROUGH FILMS</h2>
+          <h3>Experience it. Feel it. Own it.</h3>
+          <div>
+            <img src="projects/ltw-designworks/ltw-designworks-286.jpg" alt="LTW DESIGNWORKS">
+            <div class="vid-wrapper">
+              <div>
+                <i data-vid="anim" title="Play" onclick="handleVid(event)"></i>
+                <span>SEE THE FILM</span>
+              </div>
+            </div>
+            <video src="anim.mp4" id="anim" controls></video>
+          </div>
+        </div>
+        <!-- /#animation -->
+
+        <!-- #VT -->
+        <div class="vt">
+          <h2>VIRTUAL TOURINGS</h2>
+          <h3>
+            Immersive journeys powerd by state-of-the-art technologies.
+          </h3>
+          <div>
+            <img src="projects/house-of-memories/house-of-memories-286.jpg" alt="HOUSE OF MEMORIES">
+            <div class="vid-wrapper">
+              <div>
+                <i data-vid="vt" title="Play" onclick="handleVid(event)"></i>
+              </div>
+            </div>
+            <video src="vt.mp4" id="vt" controls></video>
+          </div>
+        </div>
+        <!-- /#VT -->
+
+      </li>
+      <!-- /#col II -->
+
+    </ul>
+    <!-- /#services -->
+
+  </main>
+
+  <!-- #footer -->
+  <div class="footer">
+    <footer>
+      <div class="wrapper flex">
+        <span class="copy">© 2020 GROUPE CONCEPTLY.</span>
+        <span>WEBSITE CREATION — <a href="mailto:contact@anaskhasmani.com" title="contact@anaskhasmani.com">ANAS KHASMANI</a></span>
+      </div>
+    </footer>
+  </div>
+  <!-- /#footer -->
+
+</body>
+
+</html>

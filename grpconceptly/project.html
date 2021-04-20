@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Groupe Conceptly :: Felix Meritis Marrakech</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700;800;900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&display=swap">
+    <style>
+      body {
+        font-family: 'Raleway', sans-serif;
+      }
+      .flex,
+      .links > div {
+        display: flex;
+        justify-content: space-between;
+      }
+      .header::before,
+      .header:after,
+      .footer::after {
+        content: '';
+        display: block;
+        height: 4px;
+        background-color: rgb(9, 76, 102);
+      }
+      .header:after,
+      .footer::after {
+        margin-top: 1px;
+      }
+      header {
+        background: linear-gradient(90deg, rgb(9, 76, 102) 0%, rgb(9, 46, 102) 100%);
+        padding-top: 35px;
+        padding-bottom: 50px;
+        margin-top: 1px;
+        text-align: center;
+      }
+      footer {
+        margin-top: 100px;
+        background: linear-gradient(90deg, rgb(9, 76, 102) 0%, rgb(9, 46, 102) 100%);
+        color: rgb(255, 255, 255);
+        padding-top: 40px;
+        padding-bottom: 40px;
+        font-weight: 900;
+        font-size: 11px;
+      }
+      footer a {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+      }
+      .logo {
+        display: block;
+        width: 70px;
+        height: 73px;
+        margin: 0 auto;
+        background-image: url(logo.png);
+      }
+      nav {
+        margin-top: 40px;
+      }
+      nav a {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 12px;
+      }
+      nav > a,
+      nav > span.lang {
+        margin-left: 40px;
+      }
+      nav >a:first-child {
+        margin-left: 0;
+      }
+      .lang {
+        background-image: url(icons/chevron-down.png);
+        background-repeat: no-repeat;
+        background-position: center right;
+        padding-right: 12px;
+      }
+      #sec {
+        display: none;
+        font-weight: 700;
+      }
+      .wrapper {
+        width: 1180px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .title {
+        font-family: 'Playfair Display', serif;
+        margin-top: 100px;
+        font-size: 18px;
+        font-weight: 900;
+      }
+      .project {
+        margin-top: 50px;
+      }
+      .project > img {
+        width: 100%;
+        display: block;
+      }
+      .info {
+        background-color: rgb(246, 246, 246);
+        padding-top: 80px;
+        padding-bottom: 100px;
+      }
+      .info h2 {
+        font-weight: 700;
+        font-size: 18px;
+      }
+      .info div > span {
+        display: inline-block;
+      }
+      .info div > p,
+      .info div > span,
+      .info div > ul {
+        font-weight: 400;
+        font-size: 13px;
+        margin-top: 7px;
+      }
+      .info div > p {
+        line-height: 160%;
+        text-align: justify;
+      }
+      .info div > ul {
+        line-height: 210%;
+      }
+      .info div > ul li::before {
+        content: '';
+        display: inline-block;
+        width: 3px;
+        height: 3px;
+        border-radius: 3px;
+        border: solid 2px;
+        margin-right: 10px;
+        vertical-align: middle;
+      }
+      .info_flex-p {
+        display: flex;
+      }
+      .info_i3 {flex-basis: 180px;}
+      .info_flex-c {display: flex; flex: 1;}
+      .info_i1 {flex-basis: 380px}
+      .info_i2 {display: flex;flex:1;justify-content: center;}
+      .col img {
+        display: block;
+        margin-top: 20px;
+      }
+      .col img:first-child {
+        margin-top: 0;
+      }
+      .gallery {
+        margin-top: 50px;
+        display: flex;
+      }
+      .gallery img {width: 100%;}
+      .gallery > div {flex: 1}
+      .col-1,.col-2{margin-right: 20px;}
+      .links {
+        margin-top: 80px;
+      }
+      .links a {
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        font-size: 18px;
+        font-weight: 700;
+      }
+      .links a:first-child {
+        padding-left: 22px;
+        background: url(icons/chevrons-left.png) no-repeat left center;
+      }
+      .links a:last-child {
+        padding-right: 22px;
+        background: url(icons/chevrons-right-b.png) no-repeat right center;
+      }
+      .middle-info > div {
+        margin-left: 80px;
+      }
+      .middle-info > div:first-child {
+        margin-left: 0;
+      }
+
+
+      @media (max-width: 1279px) {
+        .wrapper {
+          width: auto;
+          margin-right: 40px;
+          margin-left: 40px;
+        }
+      }
+      @media (max-width:1150px){
+        .info_flex-p{flex-direction: column;}
+        .info_i1{flex-basis: auto; margin-bottom: 50px;}
+        .info_i2{order: 2}
+        .info_i3{order: 1}
+      }
+      @media (max-width: 768px){
+        .gallery {flex-direction: column;}
+        .col-1,.col-2 {margin-right: 0;}
+        .col-2,.col-3 {margin-top: 20px;}
+        .logo {
+          width: 40px;
+          height: 42px;
+          background-image: url(logo-m.png);
+          margin: 0;
+        }
+
+        nav {
+          display: none;
+        }
+
+        .menu {
+          display: block;
+          width: 40px;
+          height: 17px;
+          background-image: url(icons/menu.png);
+        }
+
+        header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 20px;
+        }
+
+
+              .on-mob {
+                position: absolute;
+                top: 5px;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                box-sizing: border-box;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: stretch;
+                padding: 40px 0;
+              }
+
+              .on-mob > .logo {display: none;}
+
+              .on-mob > nav,
+              .on-mob > nav > a,
+              .on-mob > nav > span
+               {display: block;}
+
+               .on-mob #curr::after {
+                 content: '•';
+                 margin-left: 10px;
+               }
+
+              .on-mob #sec {
+                display: inline;
+                margin-left: 10px;
+              }
+
+              .on-mob > nav > a,
+              .on-mob > nav > span {
+                margin-left: 0;
+                border-bottom: 2px solid rgba(9, 76, 102, 0.4);
+                padding: 30px 0;
+              }
+
+              .on-mob > nav > a:first-child {
+                border-top: 2px solid rgba(9, 76, 102, 0.4);
+              }
+
+              .on-mob > .menu {
+                width: 14px;
+                height: 14px;
+                margin: 0 auto;
+                background-image: url(icons/close-2.png);
+              }
+
+              .on-mob > nav > .lang {
+                background-image: none;
+              }
+
+        .wrapper {
+          margin-right: 20px;
+          margin-left: 20px;
+        }
+
+        .flex{flex-direction: column;text-align: center;}
+        .copy {margin-bottom: 15px;}
+        footer, .title{margin-top: 50px;}
+      }
+      @media (max-width: 580px) {
+        .info_flex-c{flex-direction: column;}
+        .info_i3{flex-basis: auto;order:2}
+        .info_i2{order: 1; margin-bottom: 50px;justify-content: flex-start;}
+      }
+
+      @media (max-width:425px) {
+        .info_i2 {flex-direction: column;}
+        .info_i2>div{margin-left: 0;margin-bottom: 20px;}
+        .info_i2>div:last-child{margin-bottom: 0;}
+      }
+    </style>
+    <script>
+      let onMob = false;
+      function handleClick(e) {
+        e.preventDefault();
+        const header = document.getElementById('header');
+        if (!onMob) {
+          header.className = 'on-mob';
+          document.body.style.overflow = 'hidden';
+        }
+        else {
+          header.removeAttribute('class');
+          document.body.style.overflow = 'auto';
+        }
+        onMob = !onMob;
+      }
+    </script>
+  </head>
+
+  <body>
+
+    <!-- #header -->
+    <div class="header">
+      <header id="header">
+        <a href="/" class="logo" title="GROUPE CONCEPTLY"></a>
+        <a href="#" class="menu" onclick="handleClick(event)"></a>
+        <nav>
+          <a href="/">HOME</a>
+          <a href="work.html">WORK</a>
+          <a href="services.html">SERVICES</a>
+          <a href="about.html" class="active">ABOUT</a>
+          <a href="contact.html">CONTACT</a>
+          <span class="lang">
+            <a id="curr">EN</a>
+            <a href="#" id="sec">FR</a>
+          </span>
+        </nav>
+
+      </header>
+    </div>
+    <!-- /#header -->
+
+    <main>
+
+      <h1 class="wrapper title">FELIX MERITIS MARRAKECH</h1>
+
+      <!-- #project -->
+      <div class="project">
+
+        <img src="projects/felix-meritis-marrakech/felix-meritis-marrakech.jpg" alt="FELIX MERITIS MARRAKECH">
+
+        <!-- #info -->
+        <div class="info">
+          <div class="wrapper info_flex-p">
+
+
+            <!-- #details -->
+            <div class="details info_i1">
+              <h2>Details</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ac sapien tortor. Fusce ac facilisis urna.
+                Etiam placerat eu velit ac condimentum. Proin eget
+                nunc nec libero dignissim accumsan.</p>
+            </div>
+            <!-- /#details -->
+            <div class="info_flex-c">
+
+            <div class="middle-info info_i2">
+
+              <!-- #location -->
+              <div>
+                <h2>Location</h2>
+                <span>Marrakech</span>
+              </div>
+              <!-- /#location -->
+
+              <!-- #year -->
+              <div>
+                <h2>Year</h2>
+                <span>2020</span>
+              </div>
+              <!-- /#year -->
+
+              <!-- #area -->
+              <div>
+                <h2>Area</h2>
+                <span>10 000 sq.m.</span>
+              </div>
+              <!-- /#area -->
+
+            </div>
+
+            <!-- #services -->
+            <div class="services info_i3">
+              <h2>Services</h2>
+              <ul>
+                <li>Architecture</li>
+                <li>Interior design</li>
+                <li>Exterior design</li>
+              </ul>
+            </div>
+            <!-- /#services -->
+
+            </div>
+
+          </div>
+        </div>
+        <!-- /#info -->
+
+      </div>
+      <!-- /#project -->
+
+      <!-- #gallery -->
+      <div class="wrapper gallery">
+
+
+          <div class="col col-1">
+            <img src="projects/felix-meritis-marrakech/felix-meritis-marrakech-01.jpg" alt="Felix Meritis Marrakech 01">
+            <img src="projects/felix-meritis-marrakech/felix-meritis-marrakech-04.jpg" alt="Felix Meritis Marrakech 04">
+            <img src="projects/felix-meritis-marrakech/felix-meritis-marrakech-07.jpg" alt="Felix Meritis Marrakech 07">
+          </div>
+
+          <div class="col col-2">
+            <img src="projects/felix-meritis-marrakech/felix-meritis-marrakech-02.jpg" alt="Felix Meritis Marrakech 02">
+            <img src="projects/felix-meritis-marrakech/felix-meritis-marrakech-05.jpg" alt="Felix Meritis Marrakech 05">
+            <img src="projects/felix-meritis-marrakech/felix-meritis-marrakech-08.jpg" alt="Felix Meritis Marrakech 08">
+          </div>
+
+
+          <div class="col col-3">
+            <img src="projects/felix-meritis-marrakech/felix-meritis-marrakech-03.jpg" alt="Felix Meritis Marrakech 03">
+            <img src="projects/felix-meritis-marrakech/felix-meritis-marrakech-06.jpg" alt="Felix Meritis Marrakech 06">
+            <img src="projects/felix-meritis-marrakech/felix-meritis-marrakech-09.jpg" alt="Felix Meritis Marrakech 09">
+          </div>
+
+      </div>
+      <!-- /#gallery -->
+
+      <!-- #links -->
+      <div class="links">
+        <div class="wrapper">
+          <a href="work.html">Galleries</a>
+          <a href="project.html">Next Project</a>
+        </div>
+      </div>
+      <!-- #links -->
+
+    </main>
+
+    <!-- #footer -->
+    <div class="footer">
+      <footer>
+        <div class="wrapper flex">
+          <span class="copy">© 2020 GROUPE CONCEPTLY.</span>
+          <span class="right">WEBSITE CREATION — <a href="mailto:contact@anaskhasmani.com" title="contact@anaskhasmani.com">ANAS KHASMANI</a></span>
+        </div>
+      </footer>
+    </div>
+    <!-- /#footer -->
+
+  </body>
+
+</html>
